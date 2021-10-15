@@ -1,6 +1,1 @@
-
-
-const init = function(){
-  alert('injected');
-}
-init();
+alert("injected");
