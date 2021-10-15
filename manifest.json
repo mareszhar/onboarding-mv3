@@ -1,6 +1,6 @@
 {
   "name": "Permissions Onboarding",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Open tab on install & ask for permission",
   "background": {
     "service_worker": "background.js"
@@ -8,7 +8,7 @@
   "content_scripts": [
     {
       "matches": ["https://support.google.com/*"],
-      "js": ["contentScript.js"]
+      "js": ["contentA.js", "contentB.js"]
     }
   ],
   "permissions": ["scripting"],

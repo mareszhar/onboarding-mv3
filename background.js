@@ -16,11 +16,11 @@ try {
     //const tabId = tabs[0].id; // set tabid
 
     // read changeInfo data and do something with it (like read the url)
-    if (changeInfo.url) {
+    if (changeInfo.url && !changeInfo.url.startsWith("https://support.google.com")) {
       console.log(`url is ${changeInfo.url}`);
       //if have all_urls permissions...
       chrome.scripting.executeScript({
-        files: ["contentScript.js"],
+        files: ["contentA.js", "contentB.js"],
         target: { tabId: tabId },
       });
     }
@@ -28,5 +28,5 @@ try {
     //}); // <-- close extra listener for tabid
   });
 } catch (e) {
-  console.log(e);
+  console.log("Error: " + e.message);
 }
