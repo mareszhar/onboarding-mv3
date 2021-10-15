@@ -1,1 +1,1 @@
-alert("injected");
+alert(document.readyState);
