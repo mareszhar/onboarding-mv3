@@ -1,6 +1,11 @@
 try {
   //On first install open onboarding
-  chrome.runtime.onInstalled.addListener((r) => {
+  chrome.runtime.onInstalled.addListener(async (r) => {
+    chrome.permissions.getAll((permissions) => {
+      console.log("permissions:");
+      console.log(permissions);
+    });
+
     if (r.reason == "install") {
       //first install
       //show onboarding page
@@ -16,7 +21,10 @@ try {
     //const tabId = tabs[0].id; // set tabid
 
     // read changeInfo data and do something with it (like read the url)
-    if (changeInfo.url && !changeInfo.url.startsWith("https://support.google.com")) {
+    if (
+      changeInfo.url &&
+      !changeInfo.url.startsWith("https://support.google.com")
+    ) {
       console.log(`url is ${changeInfo.url}`);
       //if have all_urls permissions...
       chrome.scripting.executeScript({
