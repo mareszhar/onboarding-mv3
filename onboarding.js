@@ -1,6 +1,6 @@
-const button = document.querySelector('button');
-button.addEventListener('click', event => {
+const button = document.querySelector("button");
+button.addEventListener("click", (event) => {
   chrome.permissions.request({
-    origins: ["<all_urls>"]
+    origins: ["<all_urls>"],
   });
 });

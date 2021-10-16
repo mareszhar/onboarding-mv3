@@ -1,12 +1,16 @@
 try {
   //On first install open onboarding
   chrome.runtime.onInstalled.addListener(async (r) => {
-    chrome.permissions.getAll((permissions) => {
-      console.log("permissions:");
-      console.log(permissions);
-    });
+    const permissions = await chrome.permissions.getAll();
+    console.log("permissions:");
+    console.log(permissions);
 
-    if (r.reason == "install") {
+    // chrome.permissions.getAll((permissions) => {
+    //   console.log("permissions:");
+    //   console.log(permissions);
+    // });
+
+    if (r.reason !== "install") {
       //first install
       //show onboarding page
       chrome.tabs.create({
