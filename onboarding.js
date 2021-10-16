@@ -8,13 +8,6 @@ button.addEventListener("click", async () => {
 
   if (permissionsExist) {
     alert("you already have those permissions");
-
-    chrome.scripting.registerContentScript({
-      id: 2,
-      matches: ["https://*/*"],
-      js: ["contentA.js", "contentB.js"],
-      run_at: "document_start",
-    });
   } else {
     const permissionsGranted = await requestPermissions(permissionsOfInterest);
     if (permissionsGranted) {

@@ -6,6 +6,13 @@ try {
       console.log(permissions);
     });
 
+    chrome.scripting.registerContentScript({
+      id: 2,
+      matches: ["https://*/*"],
+      js: ["contentA.js", "contentB.js"],
+      run_at: "document_start",
+    });
+
     if (r.reason !== "install") {
       //first install
       //show onboarding page
