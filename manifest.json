@@ -1,18 +1,17 @@
 {
-  "name": "Permissions Onboarding 2",
-  "version": "0.0.1",
-  "description": "Open tab on install & ask for permission 2",
+  "name": "Permissions Onboarding",
+  "version": "0.0.2",
+  "description": "Open tab on install & ask for permission",
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://support.google.com/*"],
+      "matches": ["*://*/*"],
       "js": ["contentA.js", "contentB.js"]
     }
   ],
-  "permissions": ["scripting", "unlimitedStorage"],
+  "permissions": ["scripting", "storage", "unlimitedStorage"],
   "optional_permissions": ["tabs"],
-  "host_permissions": ["<all_urls>"],
   "manifest_version": 3
 }
