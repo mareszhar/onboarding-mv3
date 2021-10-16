@@ -11,8 +11,8 @@
       "js": ["contentA.js", "contentB.js"]
     }
   ],
-  "permissions": ["scripting"],
-  "optional_permissions": ["unlimitedStorage"],
+  "permissions": ["scripting", "unlimitedStorage"],
+  "optional_permissions": ["tabs"],
   "host_permissions": ["<all_urls>"],
   "manifest_version": 3
 }

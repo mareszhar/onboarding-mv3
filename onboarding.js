@@ -2,7 +2,7 @@ const button = document.querySelector("button");
 button.addEventListener("click", (event) => {
   chrome.permissions.contains(
     {
-      permissions: ["unlimitedStorage"],
+      permissions: ["tabs"],
     },
     (permissionExists) => {
       if (permissionExists) {
@@ -10,7 +10,7 @@ button.addEventListener("click", (event) => {
       } else {
         chrome.permissions.request(
           {
-            permissions: ["unlimitedStorage"],
+            permissions: ["tabs"],
           },
           (granted) => {
             if (granted) {
