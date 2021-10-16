@@ -12,6 +12,7 @@
     }
   ],
   "permissions": ["scripting"],
+  "optional_permissions": ["unlimitedStorage"],
   "host_permissions": ["<all_urls>"],
   "manifest_version": 3
 }

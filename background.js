@@ -1,22 +1,10 @@
-function getPermissions() {
-  return new Promise((resolve) => {
-    chrome.permissions.getAll((permissions) => {
-      resolve(permissions);
-    });
-  });
-}
-
 try {
   //On first install open onboarding
   chrome.runtime.onInstalled.addListener(async (r) => {
-    const permissions = await getPermissions();
-    console.log("permissions:");
-    console.log(permissions);
-
-    // chrome.permissions.getAll((permissions) => {
-    //   console.log("permissions:");
-    //   console.log(permissions);
-    // });
+    chrome.permissions.getAll((permissions) => {
+      console.log("permissions:");
+      console.log(permissions);
+    });
 
     if (r.reason !== "install") {
       //first install
