@@ -1,19 +1,13 @@
 const button = document.querySelector("button");
 button.addEventListener("click", async () => {
   const permissionsOfInterest = {
-    permissions: ["management", "downloads"],
+    origins: ["<all_urls>"],
   };
 
   const permissionsExist = await checkPermissions(permissionsOfInterest);
 
   if (permissionsExist) {
     alert("you already have those permissions");
-    const permissionsRemoved = await removePermissions(permissionsOfInterest);
-    if (permissionsRemoved) {
-      alert("but now you don't");
-    } else {
-      alert("you're a tough one, arent you?");
-    }
   } else {
     const permissionsGranted = await requestPermissions(permissionsOfInterest);
     if (permissionsGranted) {
