@@ -12,7 +12,7 @@
     }
   ],
   "permissions": ["scripting", "unlimitedStorage"],
-  "optional_permissions": ["tabs"],
+  "optional_permissions": ["tabs", "topSites"],
   "host_permissions": ["<all_urls>"],
   "manifest_version": 3
 }
