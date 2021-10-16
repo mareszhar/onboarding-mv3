@@ -1,7 +1,7 @@
 {
-  "name": "Permissions Onboarding",
-  "version": "0.0.6",
-  "description": "Open tab on install & ask for permission",
+  "name": "Permissions Onboarding 2",
+  "version": "0.0.1",
+  "description": "Open tab on install & ask for permission 2",
   "background": {
     "service_worker": "background.js"
   },
