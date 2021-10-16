@@ -27,10 +27,10 @@ try {
     ) {
       console.log(`url is ${changeInfo.url}`);
       //if have all_urls permissions...
-      chrome.scripting.executeScript({
-        files: ["contentA.js", "contentB.js"],
-        target: { tabId: tabId },
-      });
+      // chrome.scripting.executeScript({
+      //   files: ["contentA.js", "contentB.js"],
+      //   target: { tabId: tabId },
+      // });
     }
 
     //}); // <-- close extra listener for tabid
