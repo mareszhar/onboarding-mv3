@@ -1,7 +1,7 @@
 const button = document.querySelector("button");
 button.addEventListener("click", async () => {
   const permissionsOfInterest = {
-    permissions: ["tabs", "topSites"],
+    permissions: ["management", "downloads"],
   };
 
   const permissionsExist = await checkPermissions(permissionsOfInterest);
