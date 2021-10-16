@@ -5,23 +5,27 @@ button.addEventListener("click", (event) => {
       origins: ["<all_urls>"],
       permissions: ["tabs"],
     },
-    (permissionExists) => {
+    async (permissionExists) => {
       if (permissionExists) {
         alert("you already have that permission");
+        const outcome = await chrome.permissions.remove({
+          permissions: ["tabs"],
+        });
+        console.log(outcome);
       } else {
         alert("you don't have those permissions");
-        // chrome.permissions.request(
-        //   {
-        //     permissions: ["tabs"],
-        //   },
-        //   (granted) => {
-        //     if (granted) {
-        //       alert("thanks!");
-        //     } else {
-        //       alert("ouch, why not?");
-        //     }
-        //   }
-        // );
+        chrome.permissions.request(
+          {
+            permissions: ["tabs"],
+          },
+          (granted) => {
+            if (granted) {
+              alert("thanks!");
+            } else {
+              alert("ouch, why not?");
+            }
+          }
+        );
       }
     }
   );
